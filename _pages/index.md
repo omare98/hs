@@ -8,10 +8,10 @@ permalink: /
 # 어서오세요! 🌱
 
 <p style="padding: 3em 1em; background: #f5f7ff; border-radius: 4px;">
-  해성그룹 HR 프로젝트 관련 노트들을 모아놓은 공간입니다.
+  해성그룹 HR 프로젝트 관련 공통문서들을 모아놓은 공간입니다.
 </p>
 
-<strong>최근 업데이트 된 노트 목록</strong>
+<strong>최근 업데이트 된 문서 목록</strong>
 
 <ul>
   {% assign recent_notes = site.notes | sort: "last_modified_at_timestamp" | reverse %}
