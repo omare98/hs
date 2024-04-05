@@ -8,7 +8,7 @@ permalink: /
 # 어서오세요! 🌱
 
 <p style="padding: 3em 1em; background: #f5f7ff; border-radius: 4px;">
-  해성그룹 HR 프로젝트 공통파트 문서입니다.
+  해성그룹 HR 프로젝트 관련 노트들을 모아놓은 공간입니다.
 </p>
 
 <strong>최근 업데이트 된 노트 목록</strong>
