@@ -7,27 +7,16 @@ permalink: /
 
 # Welcome! 🌱
 
-<p style="padding: 3em 1em; background: #f5f7ff; border-radius: 4px;">
-  Take a look at <span style="font-weight: bold">[[Your first note]]</span> to get started on your exploration.
-</p>
+# Haesung Group e-HR 개발 가이드
 
-This digital garden template is free, open-source, and [available on GitHub here](https://github.com/maximevaillancourt/digital-garden-jekyll-template).
+## 1. [네이밍 가이드](./guide/naiming-guide.md)
 
-The easiest way to get started is to read this [step-by-step guide explaining how to set this up from scratch](https://maximevaillancourt.com/blog/setting-up-your-own-digital-garden-with-jekyll).
+## 2. [자바 코딩 스타일 가이드](./guide/Java-styleguide.md)
 
-<strong>Recently updated notes</strong>
+## 3. [자바스크립트 코딩 스타일 가이드](./guide/Javascript-styleguide.md)
 
-<ul>
-  {% assign recent_notes = site.notes | sort: "last_modified_at_timestamp" | reverse %}
-  {% for note in recent_notes limit: 5 %}
-    <li>
-      {{ note.last_modified_at | date: "%Y-%m-%d" }} — <a class="internal-link" href="{{ site.baseurl }}{{ note.url }}">{{ note.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+## 4. [SQL 스타일 가이드](./guide/SQL-stlyeguide.md)
 
-<style>
-  .wrapper {
-    max-width: 46em;
-  }
-</style>
+## 5. [공통 함수 및 컴포넌트](./guide/common-guide.md)
+
+## 6. [알림 서비스](./guide/notif-guide.md)
