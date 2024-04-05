@@ -10,7 +10,7 @@
     * 위 링크에서 IntelliJ용 XML 포맷터를 다운로드 받는다.
     * Settings > Editor > Code Style 로 간다.
     * Scheme 우측 톱니바퀴 > Import Scheme > IntelliJ IDEA code style XML 클릭
-      ![settings](./images/IntelliJ-setting.png)
+      ![settings](../assets/images/IntelliJ-setting.png)
     * 다운로드 받은 XML 포맷터를 찾아 OK를 누른다.
     * 단축키
         * 윈도우 : Ctrl + Alt + L
@@ -23,7 +23,7 @@
     * 위 링크에서 Eclipse용 XML 포맷터를 다운로드 받는다.
     * Eclipse - Preferences 로 들어가시거나 Cmd + , 를 눌러 설정창으로 간다.
     * 검색란에 들어가셔서 formatter 로 검색한 후 Java - Code Style 밑에 있는 Formatter를 클릭한다.
-      ![settings](./images/eclipse-setting.png)
+      ![settings](../assets/images/eclipse-setting.png)
     * import 버튼을 클릭 후 다운로드 받은 formatter xml 파일을 적용한다.
     * 단축키
         * 윈도우 : Ctrl + Shift + F

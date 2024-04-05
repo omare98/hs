@@ -2,7 +2,7 @@
 
 ### package
 
-* [notif 위치](../ustra-hr-system-core/src/main/java/hr/system/core/notif)
+* notif 위치 : `/ustra-hr-system-core/src/main/java/hr/system/core/notif`
     * mail : 메일 발송 서비스 관련 소스
     * mng : 알림관리 소스
     * notif : 알림 서비스 관련 소스
@@ -11,16 +11,16 @@
 ### source
 
 * 엔티티
-    * [NotifDto](../ustra-hr-system-core/src/main/java/hr/system/core/notif/notif/dto/NotifDto.java)
+    * NotifDto
         * 알림 발송 서비스의 모든 전달인자(argument)정보를 가지는 엔티티
-        * notifCode : 알림코드 [NotifCode](../ustra-hr-system-core/src/main/java/hr/system/core/notif/mng/dto/NotifCode.java) enum 이며 필수값.
+        * notifCode : 알림코드 `NotifCode` enum 이며 필수값.
         * mailList : 메일발송의 인자정보를 같는 MailDto 엔티티 목록
         * talkList : 알림톡발송의 인자정보를 같는 TalkDto 엔티티 목록
         * Static Factory Methods `of` 를 사용하여 객체 생성한다.
         ```java
         NotifDto notifDto = NotifDto.of(NotifCode, mailList, talkList);
         ```
-    * [MailDto](../ustra-hr-system-core/src/main/java/hr/system/core/notif/mail/dto/MailDto.java)
+    * MailDto
         * 메일발송 엔티티
         * 빌더패턴(builder pattern) `builder` 을 사용하여 객체 생성한다.
         ```java
@@ -33,7 +33,7 @@
             .message("내용")
             .build();
         ```
-    * [TalkDto](../ustra-hr-system-core/src/main/java/hr/system/core/notif/talk/dto/TalkDto.java)
+    * TalkDto
         * 알림톡발송 엔티티
         * 빌더패턴(builder pattern) `builder` 을 사용하여 객체 생성한다.
         * argumentList 인자는 `Mutable List` 를 사용하여 생성한다.
@@ -45,14 +45,14 @@
         ```
 
 * Service
-    * [NotifService](../ustra-hr-system-core/src/main/java/hr/system/core/notif/notif/service/NotifService.java)
+    * NotifService
         * sendNotif(NotifDto notifDto) : 알림발송 method
         * sendNotif(NotifDto notifDto, FileDataSource fileDataSource) : 첨부파일 포함 알림 발송 method
 
 ### 사용방법
 
 * 단건발송, 다건발송 모두 인자를 List로 한다.
-* 발송 결과는 [NotifResultDto](../ustra-hr-system-core/src/main/java/hr/system/core/notif/notif/dto/NotifResultDto.java) 를 return 한다.
+* 발송 결과는 `NotifResultDto` 를 return 한다.
     * mailResult : 메일 발송 결과 DTO
     * talkResult : 유스트라톡 발송 결과 DTO
     ```java
