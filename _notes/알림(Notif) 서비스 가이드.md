@@ -25,6 +25,7 @@
 
     * MailDto
         * 메일발송 엔티티
+        * 메일 제목은 기본으로 회사메일양식에 설정된 메일제목을 기본으로 한다. 재정의가 필요시 MailDto 의 mailTitl을 이용하면 된다.
         * paramMap : HashMap<String, String> 에 메일 양식에 설정된 항목들의 값을 key, value 로 넣어준다.
 
         ```java
