@@ -92,3 +92,13 @@
           }
       }
       ```
+
+### 테스트 방법
+* 메일
+    * MailService
+        * application-api.yml 의 send-service 값에 따라 AWS(자바 메일), SCP(RestApi) 방식의 메일서비스를 이용한다.
+        * 현재 local, dev 에서는 MailService class의 TEST_MAIL 에 정의된 주소로 메일을 발송하여 테스트 할 수 있다.  
+* 알림톡
+    * TalkService
+        * application-msg.yml 의 test-mode 값을 'Y' 로 설정하여 테스트 할 수 있다.
+        * 현재 local, dev 에서는 TalkService class의 TEST_PHONE_NUMBER 에 정의된 전화번호로 알림톡을 발송하여 테스트 할 수 있다.
