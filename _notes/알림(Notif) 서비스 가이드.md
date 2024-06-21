@@ -54,9 +54,18 @@
 ### 사용방법
 
 * 단건발송, 다건발송 모두 notifCode 는 필수값이다.
-  * 발송 결과는 NotifResultDto 를 return 한다.
-      * mailResult : 메일 발송 결과 DTO
-      * talkResult : 유스트라톡 발송 결과 DTO
+    * 발송 결과는 NotifResultDto 를 return 한다.
+        * mailResultList : List of MailResultDto
+            * 메일결과 DTO 목록 
+                * receiveEmailAddr : 수신자 이메일
+                * receiveName : 수신자명
+                * resultCode : 결과 코드
+                * resultMessage : 결과 메시지
+        * talkResultList : List of TalkResultDto
+            * 알림톡결과 DTO 목록
+                * receivePhoneNumber : 수신자 전화번호
+                * resultCode : 결과 코드
+                * resultMessage : 결과 메시지
       
       ```java
       public class NotifTest {
