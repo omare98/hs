@@ -36,7 +36,9 @@
 * Service
     * NotifService
         * sendNotif(NotifCode notifCode, NotifDto notifDto) : 단건 알림발송 method
+        * sendNotif(NotifCode notifCode, NotifDto notifDto, String fileId) : 단건 알림발송 with 첨부파일 ID method
         * sendNotif(NotifCode notifCode, List<NotifDto> notifList) : 다건 알림발송 method
+        * sendNotif(NotifCode notifCode, List<NotifDto> notifList, String fileId) : 다건 알림발송 with 첨부파일 ID method
 
 #### 사용방법
 
@@ -71,6 +73,24 @@
                     .build()
                 );
             }
+
+            // 알림 단건발송 with 첨부파일 ID
+            public void sendNotifSingleWithFileId() {
+                // 메일 엔티티
+                NotifCode notifCode = "알림코드";
+                // 첨부파일 ID
+                String fileId = "첨부파일 ID";
+                // 알림 파라미터 Map
+                HashMap<String, String> paramMap = new HashMap<>();
+                NotifResultDto notifResultDto = notifService.sendNotif(
+                    notifCode, 
+                    NotifDto.builder()
+                        .toEmplNo("알림 대상 사원번호")
+                        .paramMap(paramMap)
+                        .build(), 
+                    fileId
+                );
+            }
         
             // 알림 다건 발송
             public void sendNotifMulti() {
@@ -87,6 +107,24 @@
                 }
                 // 알림 발송
                 NotifResultDto notifResultDto = notifService.sendNotif(notifCode, notifList);
+            }
+
+            // 알림 다건 발송 with 첨부파일 ID
+            public void sendNotifMultiWithFileId() {
+                NotifCode notifCode = "알림코드";
+                // 첨부파일 ID
+                String fileId = "첨부파일 ID";
+                for (int i=0; i<10; i++) {
+                    // 알림 파라미터 Map
+                    HashMap<String, String> paramMap = new HashMap<>();
+                    notifList.add(NotifDto.builder()
+                        .toEmplNo("알림 대상 사원번호_" + i)
+                        .paramMap(paramMap)
+                        .build()
+                    );
+                }
+                // 알림 발송
+                NotifResultDto notifResultDto = notifService.sendNotif(notifCode, notifList, fileId);
             }
         }
         ```
@@ -111,8 +149,6 @@
         * fromName : 발신자 이름 (시스템에서 정의)
         * mailTitle : 메일 제목 (기본적으로 메일양식에서 정의한 메일제목을 사용, 재정의시 재정의한 메일제목으로 발송)
         * paramMap : 메일의 인자정보를 파라미터 Map (HashMap<String, String>)
-        * fileDataSource : 첨부파일 FileDataSource
-        * fileName : 첨부파일명
         * isTest : 테스트 여부 (기본 : false)
         
         ```java
@@ -131,7 +167,9 @@
 * Service
     * MailService
         * sendMail(String formCode, MailDto mailDto) : 단건 메일발송 method
+        * sendMail(String formCode, MailDto mailDto, String fileId) : 단건 발송 with 첨부파일 ID method
         * sendMail(String formCode, List<MailDto> mailList) : 다건 메일발송 method
+        * sendMail(String formCode, List<MailDto> mailList, String fileId) : 다건 메일발송 with 첨부파일 ID method
 
 ### 3. 알림톡
 
